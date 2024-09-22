@@ -29,7 +29,9 @@ h1 {
 
 박스모델 전까지만 css 공부함.
 
-
+자바스크립트-
+자바스크립트는 함수랑 객체 위주로 공부하고
+배열,반복문을 감 정도 익히면 될 듯
 
 let name = 'egoing';
 alert("ajfqidf, " + name + " adfsafdikjo, " + name);
@@ -41,3 +43,5 @@ alert("ajfqidf, " + name + " adfsafdikjo, " + name);
 조건문부터 쭉 공부할 것
 
 &lt는 html에서 부등호(<)다
+
+
