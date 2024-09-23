@@ -2,6 +2,53 @@ java->데이타베이스->javascript->spring
 
 2003090019682 
 
+자바공부 시작
+
+casting(형변환)----
+
+double b2 = (double) 1;
+(형) 숫자; 상태일 때 숫자를 형에 맞게 변형 시킨다.
+->1을 double로 변환
+
+String f = Integer.toString(1);
+문자열 f는 숫자 1을 문자열로 변환시킨것이다.
+
+System.out.println(f.getClass());
+출력문으로 출력함
+
+불----
+int base = 180;
+int height = 185;
+boolean isTall = height > base;
+
+if (isTall) {
+    System.out.println("키가 큽니다.");
+}
+
+은 위와 같은 구조로 이어져있다.
+boolean 변수명 = 값1 > 값2;
+
+if(변수명) {
+    System.out.println("키가 큽니다.");
+}
+
+boolean과 변수명이 어떤 형식으로 조건문을 만들고 출력을 하는지 알면 된다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 css 정리
 
 <style>
@@ -46,5 +93,4 @@ alert("ajfqidf, " + name + " adfsafdikjo, " + name);
 
 &lt는 html에서 부등호(<)다
 
-객체지향-
 
