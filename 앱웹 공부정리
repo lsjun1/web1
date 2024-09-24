@@ -83,7 +83,26 @@ ArrayList의 add를 알아보자.
      pitches.add("138");.....
      를 하면 138이 출력된다. 
 
+상수 집합-------
+상수 집합은 
+enum CoffeeType {
+    AMERICANO,
+    ICE_AMERICANO,
+    CAFE_LATTE
+};
 
+이런 식으로 enum 변수명 { .... }; 이런 식이다.
+
+enum 사용 이유:
+int americano = countSellCoffee(90);
+위와 같은 코드는 90이 아메리카노라는걸 외워야하며 만약 90이라는 커피종류가 없으면 오류가 된다.
+
+형 변환-------
+
+
+
+final-----
+const랑 똑같음
 
 
 
