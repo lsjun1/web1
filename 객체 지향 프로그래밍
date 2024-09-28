@@ -128,3 +128,31 @@ count(++)로 0을 복사하고 왼쪽 int count에 0을 전달하고 count(++)�
 
 결론: 최종적으로 count++이 0을 복사하여 왼쪽의 int count에 0이 전달되고, 
 오른쪽의 count는 그 이후 0에서 1로 증가된 것이다.
+
+상속----------------------------
+class Animal {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Dog extends Animal { //Animal에 있는 클래스를 Dog 클래스에 그대로 사용하게 만듦.
+                          // + 만약 상속을 사용하지 않는다면 Dog 클래스와 필드 메소드를 다시 만들어야 함.
+    void sleep() {
+        System.out.println(this.name+" zzz");
+    }
+}
+
+public class Sample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.setName("poppy");
+        System.out.println(dog.name);
+        dog.sleep();
+    }
+}
+
+메서드 오버라이징--------------------------------------
+
