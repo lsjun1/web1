@@ -96,7 +96,8 @@ class 클래스명 { // c언어로 치자면 struct void main같은거고 구조
         객체.메서드이름();이라는 구조로 객체와 메서드이름을 연동시켜 값을 출력시키기 위한 토대를 마련함
         System.out.println(객체.메서드명()); 토대를 마련한걸 출력하기 위한 결과임.
 
-값에 의한 호출---------------class Updater {
+값에 의한 호출---------------
+class Updater {
     void update(Counter counter) { //int count
         counter.count++; //count++;
     }
