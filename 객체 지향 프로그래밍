@@ -236,9 +236,74 @@ Dog 클래스에서 sleep()으로 메서드를 만든 상태다.
 HouseDog클래스에서 sleep()매서드를 자기자신만의 방식으로 다시 정의하는 방식이 오버라이징인 상태인것이다.
 
 생성자-------------------------------------------------------------------------------------
-음 애매한듯? 이해한건지 잘 모르겄음 일단 pass
 
-++다시 공부할 것!
+생성자 오버로딩 : 생성자를 다른 데이터 타입, 다른 입력값 등으로 여러개의 생성자를 만드는 것
+
+class Animal {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Dog extends Animal {
+    void sleep() {
+        System.out.println(this.name + " zzz");
+    }
+}
+
+class HouseDog extends Dog {
+    HouseDog(String name) {
+        this.setName(name);
+    }
+
+    HouseDog(int type) {
+        if(type == 1) {
+            this.setName("yorkshire");
+        }
+
+        else if(type == 2) {
+            this.setName("bulldog");
+        }
+    }
+
+    void sleep() {
+        System.out.println(this.name + " zzz in house");
+    }
+
+    void sleep(int hour) {
+        System.out.println(this.name + " zzz in house for" + hour + "hours");
+    }
+}
+
+public class Sample {
+    public static void main(String[] args) {
+        HouseDog happy = new HouseDog("happy");
+        HouseDog yorkshire = new HouseDog(1);
+        System.out.println(happy.name);
+        System.out.println(yorkshire.name);
+    }
+}
+
+위의 코드는 HouseDog 메서드를 2가지로 만들었다.
+
+하나는 String 자료형으로 입력하는 생성자
+다른 하나는 int자료형을 입력으로 받는 생성자로 다른 생성자를 여러 개 만드는 것이 바로 생성자 오버로딩이다.(메서드 오버로딩과 동일함)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 인터페이스---------------------------------------------------------------------------------
 
