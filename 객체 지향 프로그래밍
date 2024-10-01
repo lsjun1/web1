@@ -3,6 +3,12 @@ https://wikidocs.net/281
 
 https://www.compilejava.net/
 
+https://limesparkling.tistory.com/17
+공부방법: 객제지향 완벽 이해 -> object string,stringbuffer 공부
+        ->컬렉션 프레임 웍 완벽 이해 -> 입출력 공부 ->(선택)안드로이드 공부 할거면 AWT/Thread 공부
+    
+
+
 생활코딩, 점프 투 자바로
 메소드 공부 후 객체지향프로그램 공부할 것
 
@@ -189,7 +195,78 @@ HouseDog클래스에서 sleep()매서드를 자기자신만의 방식으로 다�
 
 인터페이스---------------------------------------------------------------------------------
 
-어렵다...
+어려움(hard)
 
+인터페이스란 쉽게 말해서 메서드를 중복해서 만들 수 있게 짜는 것이다.
 
+class Animal {
+    String name;
 
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Tiger extends Animal {
+}
+
+class Lion extends Animal {
+}
+
+class ZooKeeper {
+    void feed(Tiger tiger) {  // 호랑이가 오면 사과를 던져 준다.
+        System.out.println("feed apple");
+    }
+
+    void feed(Lion lion) {  // 사자가 오면 바나나를 던져준다.
+        System.out.println("feed banana");
+    }
+}
+
+이 코드를 보면 현재 Animal 클래스를 만들고 상속으로 Tiger와 Lion을 서로 연동시키고
+ZooKeeper 클래스에서 ???가 오면 ??를 던져 준다.를 지속적으로 출력하고 있다.
+그러나, 만약 호랑이,사자,토끼를 비롯해서 수만마리를 출력해야한다면 
+
+void feed(?? ??) {  // ??가 오면 바나나를 던져준다.
+        System.out.println("feed banana");
+    }
+}
+코드에 ?? ??를 수만개를 만들어서 출력해야하는가? 이를 중복해서 코드를 효율적으로 짜 주는 것이 인터페이스이다.
+
+인터페이스 완성 코드를 보자면,
+
+interface Predator {
+    String getFood();
+
+    default void printFood() {
+        System.out.println("my food is " + getFood());
+    }
+}
+
+class Animal {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Tiger extends Animal implements Predator {
+    public String getFood() {
+        return "apple";
+    }
+}
+
+class Lion extends Animal implements Predator {
+    public String getFood() {
+        return "banana";
+    }
+}
+
+class ZooKeeper {
+    public void feed(Predator predator) {
+        System.out.println("feed " + predator.getFood());
+    }
+}
+
+여기서 
