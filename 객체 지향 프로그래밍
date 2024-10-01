@@ -7,7 +7,7 @@ https://limesparkling.tistory.com/17
 공부방법: 객제지향 완벽 이해 -> object string,stringbuffer 공부
         ->컬렉션 프레임 웍 완벽 이해 -> 입출력 공부 ->(선택)안드로이드 공부 할거면 AWT/Thread 공부
     
-
+현재 값 호출 이후로부터 공부하면 됨.
 
 생활코딩, 점프 투 자바로
 메소드 공부 후 객체지향프로그램 공부할 것
@@ -87,7 +87,7 @@ person.setName("Alice"); 호출로 인해 "Alice"가 매개변수 name에 전달
 4.그렇게 매개변수값에 Alice값이 변수/필드에 값으로 할당이 되었고 
 그 뒤 System.out.println(person.getName());으로 필드값을 출력함.
 
-크 완벽쓰~
+드디어 이해한듯..
 
 
 
@@ -108,7 +108,7 @@ public class Sample {
         System.out.println("before update:"+myCounter.count);
         Updater myUpdater = new Updater();
         myUpdater.update(myCounter);
-        System.out.println("afater update:"+myCounter.count);
+        System.out.println("after update:"+myCounter.count);
     }
 }
 
