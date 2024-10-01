@@ -89,6 +89,62 @@ person.setName("Alice"); 호출로 인해 "Alice"가 매개변수 name에 전달
 
 드디어 이해한듯..
 
+그 외에 메서드----------------------
+return 사용법:
+
+public class Sample {
+    void sayNick(String nick) {
+        if ("바보".equals(nick)) {
+            return;
+        }
+        System.out.println("나의 별명은 "+nick+" 입니다.");
+    }
+
+    public static void main(String[] args) {
+        Sample sample = new Sample();
+        sample.sayNick("야호");
+        sample.sayNick("바보");  // 출력되지 않는다.
+    }
+}
+
+return;으로 하게 된다면, 바보가 출력되지 않는다.
+
+메서드 내 변수 효력 범위-------------------------
+public class Sample {
+    void varTest(int a) {
+        a++;
+    }
+
+    public static void main(String[] args) {
+        int a = 1;
+        Sample sample = new Sample();
+        sample.varTest(a);
+        System.out.println(a);
+    }
+}
+
+1. main메서드에서 a에 1을 대입함.
+2. varTest메서드를 입력해서 a를 주어 호출?
+3.a의 값을 출력
+
+2가 아닌 1이 출력된 이유는
+
+void varTest(int a) {
+        a++;
+}
+
+해당 메서드가 메서드 안에서만 쓰이기에 다른 메서드의 값에 영향을 주지 않는다.
+
+그렇다면 다른 메서드의 값에 영향을 주는 경우는 총 2가지로
+
+1.
+a = sample.varTest(a);로 호출시키면 된다.
+
+2.
+sample.a++;
+sample.a=1;로 변수a를 sample클래스의 객체 변수로 선언해서 해당 객체를 1만큼 증가시키고
+main 메서드에서 varTest메서드를 호출하면 Sample 클래스의 sample을 전달하도록 수정했다.
+
 
 
 값에 의한 호출---------------
