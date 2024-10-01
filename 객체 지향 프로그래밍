@@ -235,6 +235,27 @@ Dog 클래스에서 sleep()으로 메서드를 만든 상태다.
 그렇기에 현재 Dog클래스에서 HouseDog클래스로 sleep()매서드가 옮겨진 상태이며,
 HouseDog클래스에서 sleep()매서드를 자기자신만의 방식으로 다시 정의하는 방식이 오버라이징인 상태인것이다.
 
+번외: @Override에 대해
+
+public class Animal {
+    public void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+public class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("멍멍!");
+    }
+}
+
+위 코드는 Animal 클래스가 sound()메소드를 가지고 있고 Dog 클래스가 Animal 클래스를 상속하고 있으니까
+Animal 클래스가 부모 Dog 클래스가 자식 클래스다.
+
+여기서 중요한 점은 자식 클래스인 Dog 클래스에서 Animal 클래스의 메소드인 sound()를 다시 println해서 재정의 하고 있기에,
+@Override로 자식 클래스에서 부모 클래스의 메소드를 재정의 하고 있으면 사용하는 걸 의미한다.
+
 생성자-------------------------------------------------------------------------------------
 
 생성자 오버로딩 : 생성자를 다른 데이터 타입, 다른 입력값 등으로 여러개의 생성자를 만드는 것
@@ -291,94 +312,21 @@ public class Sample {
 하나는 String 자료형으로 입력하는 생성자
 다른 하나는 int자료형을 입력으로 받는 생성자로 다른 생성자를 여러 개 만드는 것이 바로 생성자 오버로딩이다.(메서드 오버로딩과 동일함)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 인터페이스---------------------------------------------------------------------------------
 
-어려움(hard)
+유냔히 어려움(hard)
 
 인터페이스란 쉽게 말해서 메서드를 중복해서 만들 수 있게 짜는 것이다.
 
-class Animal {
-    String name;
-
-    void setName(String name) {
-        this.name = name;
-    }
-}
-
-class Tiger extends Animal {
-}
-
-class Lion extends Animal {
-}
-
-class ZooKeeper {
-    void feed(Tiger tiger) {  // 호랑이가 오면 사과를 던져 준다.
-        System.out.println("feed apple");
-    }
-
-    void feed(Lion lion) {  // 사자가 오면 바나나를 던져준다.
-        System.out.println("feed banana");
-    }
-}
-
-이 코드를 보면 현재 Animal 클래스를 만들고 상속으로 Tiger와 Lion을 서로 연동시키고
-ZooKeeper 클래스에서 ???가 오면 ??를 던져 준다.를 지속적으로 출력하고 있다.
-그러나, 만약 호랑이,사자,토끼를 비롯해서 수만마리를 출력해야한다면 
-
-void feed(?? ??) {  // ??가 오면 바나나를 던져준다.
-        System.out.println("feed banana");
-    }
-}
-코드에 ?? ??를 수만개를 만들어서 출력해야하는가? 이를 중복해서 코드를 효율적으로 짜 주는 것이 인터페이스이다.
-
-인터페이스 완성 코드를 보자면,
-
-interface Predator {
-    String getFood();
-
-    default void printFood() {
-        System.out.println("my food is " + getFood());
-    }
-}
-
-class Animal {
-    String name;
-
-    void setName(String name) {
-        this.name = name;
-    }
-}
+감이 안 잡힘....
 
 class Tiger extends Animal implements Predator {
-    public String getFood() {
-        return "apple";
-    }
+}
+이렇게 해야 나중에 
+
+다형성---------------------------------------------------------------------------------
+
+interface Predator {
+
 }
 
-class Lion extends Animal implements Predator {
-    public String getFood() {
-        return "banana";
-    }
-}
-
-class ZooKeeper {
-    public void feed(Predator predator) {
-        System.out.println("feed " + predator.getFood());
-    }
-}
-
-여기서 
