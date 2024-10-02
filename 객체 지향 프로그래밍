@@ -1,5 +1,6 @@
 https://opentutorials.org/course/1223
 https://wikidocs.net/281
+https://www.tcpschool.com/java/java_collectionFramework_concept
 
 https://www.compilejava.net/
 
@@ -312,54 +313,9 @@ public class Sample {
 하나는 String 자료형으로 입력하는 생성자
 다른 하나는 int자료형을 입력으로 받는 생성자로 다른 생성자를 여러 개 만드는 것이 바로 생성자 오버로딩이다.(메서드 오버로딩과 동일함)
 
-인터페이스---------------------------------------------------------------------------------
+인터페이스 & 다형성---------------------------------------------------------------------------------
+뭔지 몰라서 일단 패스함.
 
-유냔히 어려움(hard)
 
-인터페이스란 쉽게 말해서 메서드를 중복해서 만들 수 있게 짜는 것이다.
 
-감이 안 잡힘....
-
-class Tiger extends Animal implements Predator {
-}
-이렇게 해야 나중에 
-
-다형성---------------------------------------------------------------------------------
-
-interface Predator {
-}
-
-class Animal {
-}
-
-class Tiger extends Animal implements Predator {
-}
-
-class Lion extends Animal implements Predator {
-}
-
-class ZooKeeper {
-}
-
-class Bouncer {
-    void barkAnimal(Animal animal) {
-        if (animal instanceof Tiger) {
-            System.out.println("어흥");
-        } else if (animal instanceof Lion) {
-            System.out.println("으르렁");
-        }
-    }
-}
-
-public class Sample {
-    public static void main(String[] args) {
-        Tiger tiger = new Tiger();
-        Lion lion = new Lion();
-
-        Bouncer bouncer= new Bouncer();
-        bouncer.barkAnimal(tiger);
-        bouncer.barkAnimal(lion);
-    }
-}
-
-기본 구조
+컬렉션 프레임 워크---------------------------------
