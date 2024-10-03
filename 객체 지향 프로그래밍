@@ -304,8 +304,86 @@ public class Sample {
 다른 하나는 int자료형을 입력으로 받는 생성자로 다른 생성자를 여러 개 만드는 것이 바로 생성자 오버로딩이다.(메서드 오버로딩과 동일함)
 
 인터페이스 & 다형성---------------------------------------------------------------------------------
-뭔지 몰라서 일단 패스함.
 
+class Animal {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Tiger extends Animal {
+}
+
+class Lion extends Animal {
+}
+
+class ZooKeeper {
+    void feed(Tiger tiger) {  // 호랑이가 오면 사과를 던져 준다.
+        System.out.println("feed apple");
+    }
+
+    void feed(Lion lion) {  // 사자가 오면 바나나를 던져준다.
+        System.out.println("feed banana");
+    }
+}
+
+public class Sample {
+    public static void main(String[] args) {
+        ZooKeeper zooKeeper = new ZooKeeper();
+        Tiger tiger = new Tiger();
+        Lion lion = new Lion();
+        zooKeeper.feed(tiger);  // feed apple 출력
+        zooKeeper.feed(lion);  // feed banana 출력
+    }
+}
+
+위의 코드가 일반적 구조
+interface Predator {
+    void feed();
+}
+
+class Animal {
+    String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}
+
+class Tiger extends Animal implements Predator {
+    @Override
+    public void feed() {
+        System.out.println("feed apple");
+    }
+}
+
+class Lion extends Animal implements Predator {
+    @Override
+    public void feed() {
+        System.out.println("feed banana");
+    }
+}
+
+class ZooKeeper {
+    void feed(Predator predator) {
+        predator.feed();
+    }
+}
+
+public class Sample {
+    public static void main(String[] args) {
+        ZooKeeper zooKeeper = new ZooKeeper();
+        Tiger tiger = new Tiger();
+        Lion lion = new Lion();
+
+        zooKeeper.feed(tiger);
+        zooKeeper.feed(lion);
+    }
+}
+
+이 구조가 인터페이스를 이용하여 구조를 획기적으로 줄인 구조이다.
 
 
 컬렉션 프레임 워크---------------------------------
