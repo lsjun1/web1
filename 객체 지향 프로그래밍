@@ -5,12 +5,11 @@ https://www.tcpschool.com/java/java_collectionFramework_concept
 https://www.compilejava.net/
 
 https://limesparkling.tistory.com/17
-공부방법: 객제지향 완벽 이해 -> object string,stringbuffer 공부
+공부방법: 객제지향 완벽 이해 -> object string,stringbuffer 공부(자바 API 클래스) TCP에 있음.
         ->컬렉션 프레임 웍 완벽 이해 -> 입출력 공부 ->(선택)안드로이드 공부 할거면 AWT/Thread 공부
 
 
 현재 공부 상황: 클래스,객체,필드,메서드,this 등을 공부함,
-                TCP 제어자부터 공부시작 할려고 함.
 
 
 메서드-
