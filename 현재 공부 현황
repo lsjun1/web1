@@ -27,10 +27,12 @@ c언어
 컬렉션 프레임워크 c언어랑 같이 자료구조 공부할 것
 https://www.tcpschool.com/java/java_collectionFramework_concept
 
++ 처음부터 다시 개념잡기
+
 javascript 
 https://ko.javascript.info/로 들어가서 공부
 
 데이터베이스
 https://opentutorials.org/course/3161로 들어가서 공부
 
-다 익히고 나면 인프런 강의로 포트폴리오 준비 시작하기.
+다 익히고 나면 인프런 강의로 포트폴리오 준비 시작하기.(spring을 통한 crud 게시판 구축)
