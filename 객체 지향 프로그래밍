@@ -14,6 +14,76 @@ https://limesparkling.tistory.com/17
 
 자바 끝내면 이제 spring 공부해야겠지....
 
+클래스-
+
+class Animal {
+}
+
+public class Sample {
+        public static void main(String[] args)
+         Animal cat = new Animal();        
+        }
+}
+
+new:객체 생성 키워드
+cat은 객체이면서 Animal의 인스턴스이다.
+인스턴스는 특정 객체가 어떤 클래스의 객체인지를 설명하는것이다.
+즉 cat이 Animal의 객체라는 것을 설명하고 있는것이다.
+
+
+class Animal {
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Sample {
+    public static void main(String[] args) {
+        Animal cat = new Animal();
+        cat.setName("body"); // 메서드 호출
+        
+        Animal dog = new Animal();
+        dog.setName("happy");
+    }
+}
+
+this.name = name에 대해 설명해보자. 
+우선 cat.setName("body")에서 입력값으로 setName메서드를 호출했기에 
+setName의 내부에 선언된 this는 cat을 가리킨다.
+
++ 
+추가적으로 객체 변수는 공유되지 않는다는 점을 살펴보자.
+
+class Animal {
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Sample {
+    public static void main(String[] args) {
+        Animal cat = new Animal();
+        cat.setName("boby");
+
+        Animal dog = new Animal();
+        dog.setName("happy");
+    }
+}
+
+이 문장에서 cat은 body dog은 happy가 출력되어서
+cat.name = "boby";
+dog.name = "happy";가 출력될 것이다. 
+
+근데 this(객체).name = name(메서드호출)을 보자면,
+dog.name="happy"가 나중에 출력되므로 cat.name="happy"라는 값으로 body가 happy로 변경되는가?
+this.name = name을 보면 name(메서드호출,매개변수)가 동일한데 그럼 이 값이 변경되지 않을까?
+그러나 실제로 출력해보면 body와 happy만 출력되는 점이 바로 객체 변수 값이 독립적으로 유지된다라는 걸 확인한다.
+
+
 메서드-
 
 class 클래스명 {
