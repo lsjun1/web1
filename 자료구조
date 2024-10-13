@@ -1,1 +1,20 @@
+newNode->data = readData:
+
+newNode가 data을 readData값에 저장시키는것이다.
+
+newNode = readData;
+newNode가 readData를 가리키게 만든다.
+즉 포인터의 주소가 변경된다.
+
+단일 연결 리스트 
+-----------------------------------------------
+head -> NULL
+tail -> NULL
+이 두 개의 그림을 위해서
+
+Node * head = NULL;
+Node * tail = NULL;
+Node * cur  = NULL;
+
+
 
