@@ -1,0 +1,42 @@
+https://www.inflearn.com/course/lecture?courseSlug=do-it-nodejs-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%9E%85%EB%AC%B8&unitId=198101&tab=curriculum
+
+https://www.mycompiler.io/ko/new/nodejs
+https://www.goorm.io/dashboard
+
+모듈 시스템------------------------------------------------------------------------
+
+모듈: 프로그램을 여러 파일로 나눠서 각각 불러서 사용할 수 있게 하는 개념
+
+모듈은 2가지 방식이 있는데, 
+  
+1.내장모듈
+
+const fs = require('fs');
+
+require('fs')처럼 사용해서 fs의 파일을 불러올 수 있음.
+
+2.사용자 정의 모듈
+
+function add(a, b) {
+  return a + b;
+}
+
+module.exprots = add;
+
+내가 만든 기능을 다른 파일에 저장하고 필요시 불러와서 사용함.
+
+위의 코드처럼 수학 관련 개념을 모아 놓고
+
+const add = require(`./math');
+console.log(add(2, 3));
+밑의 코드처럼 해당 기능을 불러와서 사용할 수 있다.
+
+--------------------------------------------------------------------------------
+const path = require("path");
+
+const fullPath = path.join('some'. 'work'. 'ex.text');
+console.log(fullPath);
+
+const dir = path.dirname(fullPath);
+console.log(dir);
+
