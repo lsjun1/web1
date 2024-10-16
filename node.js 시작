@@ -10,6 +10,7 @@ https://thankyou-ddabong-dochi.tistory.com/m/123
 
 모듈: 프로그램을 여러 파일로 나눠서 각각 불러서 사용할 수 있게 하는 개념
 
+
 -----------------------------------------------------------
 const hello = (name) => {
     console.log(`${name} 님, 안녕하세요?`);
@@ -17,12 +18,20 @@ const hello = (name) => {
 
 module.exports = hello;
 
+hello함수에서 (name)은 함수의 매개변수고 name이라는 인자를 하나받는다.
+=> {}는 화살표 함수로 전달받은 name을 함수의 본체에 내용을 넣는다.
+
 -----------------------------------------------------------
 const user = "홍길동";
 
 module.exports = user;
 
+user로 변수 정의를 해서 원하는 값을 정의하고 
+module.exports를 통해서 외부에서 변수를 정의해서 사용할 수 있게 만든다.
+
 -----------------------------------------------------------
+user-1.js
+
 
 const user1 = "Kim";
 const user2 = "Lee";
@@ -38,11 +47,10 @@ const { user1, user2 } = require("./users-1");
 hello(user);     // 홍길동 님, 안녕하세요?
 hello(user1);    // Kim 님, 안녕하세요?
 hello(user2);    // Lee 님, 안녕하세요?
+
+require("")는 user.js파일에서 홍길동이라는 사용자를 가져온다.
+const {...}는 user1.js에서 kim과 Lee를 가져와 user1,user2를 사용한다.
+hello();는 출력한다.
 -----------------------------------------------------------
 
-const ? = "변수 정의";
 
-module.exports = user;
-
-user로 변수 정의를 해서 원하는 값을 정의하고 
-module.exports를 통해서 외부에서 변수를 정의해서 사용할 수 있게 만든다.
