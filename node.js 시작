@@ -6,40 +6,43 @@ https://www.goorm.io/dashboard
 https://thankyou-ddabong-dochi.tistory.com/m/123
 
 
-모듈 시스템------------------------------------------------------------------------
+모듈 시스템-----------------------------------------------------------------------
 
 모듈: 프로그램을 여러 파일로 나눠서 각각 불러서 사용할 수 있게 하는 개념
 
-모듈은 2가지 방식이 있는데, 
-  
-1.내장모듈
+-----------------------------------------------------------
+const hello = (name) => {
+    console.log(`${name} 님, 안녕하세요?`);
+};
 
-const fs = require('fs');
+module.exports = hello;
 
-require('fs')처럼 사용해서 fs의 파일을 불러올 수 있음.
+-----------------------------------------------------------
+const user = "홍길동";
 
-2.사용자 정의 모듈
+module.exports = user;
 
-function add(a, b) {
-  return a + b;
-}
+-----------------------------------------------------------
 
-module.exprots = add;
+const user1 = "Kim";
+const user2 = "Lee";
 
-내가 만든 기능을 다른 파일에 저장하고 필요시 불러와서 사용함.
+module.exports = { user1, user2 };
 
-위의 코드처럼 수학 관련 개념을 모아 놓고
+-----------------------------------------------------------
 
-const add = require(`./math');
-console.log(add(2, 3));
-밑의 코드처럼 해당 기능을 불러와서 사용할 수 있다.
+const user = require("./user");
+const hello = require("./hello");
+const { user1, user2 } = require("./users-1");
 
---------------------------------------------------------------------------------
-const path = require("path");
+hello(user);     // 홍길동 님, 안녕하세요?
+hello(user1);    // Kim 님, 안녕하세요?
+hello(user2);    // Lee 님, 안녕하세요?
+-----------------------------------------------------------
 
-const fullPath = path.join('some'. 'work'. 'ex.text');
-console.log(fullPath);
+const ? = "변수 정의";
 
-const dir = path.dirname(fullPath);
-console.log(dir);
+module.exports = user;
 
+user로 변수 정의를 해서 원하는 값을 정의하고 
+module.exports를 통해서 외부에서 변수를 정의해서 사용할 수 있게 만든다.
