@@ -36,6 +36,32 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js
+https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js
+https://s3.amazonaws.com/shiitake/react-tooltip-lite.min.js
+
+기본 값 설정
+Component.defaultProps = {...}
+
+propTypes 검증
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.value}
+        {this.props.secondvalue}
+        {this.props.thirdvalue}
+      </div>
+    };
+  }
+};
+
+App.propTypes = {
+  value:React.PropTypes.string,
+  secondValue:React,PropType.number,
+  thirdValue:React,PropTypes.any.isRequired
+};
+
 설명---------------------------------------------------------------------------------------
 Codelab 컴포넌트에서 name값과 children값을 h1과 div에 출력한다.
 App 컴포넌트에서는 Codelab 컴포넌트를 자식으로 포함하고 있고, Codelab에 name과 children값을 전달한다.
