@@ -44,23 +44,55 @@ https://s3.amazonaws.com/shiitake/react-tooltip-lite.min.js
 Component.defaultProps = {...}
 
 propTypes 검증
-class App extends React.Component {
+props가 올바른 데이터 타입인지 아닌지 검증함.(잘못된 데이터 타입이면 경고를 줌)
+
+import React from "https://esm.sh/react";
+import ReactDOM from "https://esm.sh/react-dom";
+import PropTypes from "https://esm.sh/prop-types"; // PropTypes 패키지 임포트
+
+class Codelab extends React.Component {
   render() {
     return (
       <div>
-        {this.props.value}
-        {this.props.secondvalue}
-        {this.props.thirdvalue}
+        <h1>Hello {this.props.name}</h1>
+        <div>{this.props.children}</div>
       </div>
-    };
+    );
   }
+}
+
+Codelab.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.number.isRequired
 };
 
-App.propTypes = {
-  value:React.PropTypes.string,
-  secondValue:React,PropType.number,
-  thirdValue:React,PropTypes.any.isRequired
+Codelab.defaultProps = {
+  name: 'Unknown'
 };
+
+class App extends React.Component {
+  render() {
+    return (
+      <Codelab name={this.props.name}>{this.props.children}</Codelab>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App name="velopert">i am your child</App>,
+  document.getElementById('root')
+);
+
+에서 
+
+Codelab.defaultProps = {
+  name: 'Unknown'
+};는 name prop이 제공되지 않으면 Unkwon을 사용하도록 기본 값 설정했다.
+
+Codelab.propTypes = { name: PropTypes.string, number: PropTypes.number.isRequired };는 name은 문자열이어야 하고, 
+number는 반드시 숫자로 제공되어야 한다는 검증을 설정합니다.
+
+number prop이 제공되지 않으면 경고가 발생함.
 
 설명---------------------------------------------------------------------------------------
 Codelab 컴포넌트에서 name값과 children값을 h1과 div에 출력한다.
