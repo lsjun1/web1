@@ -1,0 +1,53 @@
+express
+https://codepen.io/axzekhmd-the-selector/pen/KKOPXPL
+https://github.com/codespaces/templates
+
+https://www.inflearn.com/course/react-%EA%B0%95%EC%A2%8C-velopert#reviews
+https://www.youtube.com/watch?v=Tt_tKhhhJqY&t=9s 조코딩
+https://www.youtube.com/watch?v=hwknmhLKgYg&list=PLuHgQVnccGMAGOQu8CBDO9hn-FXFmm4Wp 생활코딩
+
+react------------------- 
+
+jsx의 특징
+
+props
+
+class Codelab extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello {this.props.name}</h1>
+        <div>{this.props.children}</div>
+      </div>
+    );
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <Codelab name={this.props.name}>{this.props.children}</Codelab>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App name="velopert">i am your child</App>,
+  document.getElementById('root')
+);
+
+설명---------------------------------------------------------------------------------------
+Codelab 컴포넌트에서 name값과 children값을 h1과 div에 출력한다.
+App 컴포넌트에서는 Codelab 컴포넌트를 자식으로 포함하고 있고, Codelab에 name과 children값을 전달한다.
+
+<Codelab name={this.props.name}>{this.props.children}</Codelab>에서
+this.props.name은 App컴포넌트 name값을 Codelab 컴포넌트에 전달하고, 
+this.props.children은 <App name=...... child</App>에 <App>태그 안 작성된 값("i am your child")를
+Codelab으로 전달한다.
+
+ReactDOM.render은 App컴포넌트를 DOM에 렌더링하는 코드이며,
+App 컴포넌트에 name="velopert"와 자식 요소인 "i am your child"를 전달한다.
+이 값들은 App -> Codelab컴포넌트로 전달된다.(name은 Codelab의 h1 태그에 출력, "i am your child"는 
+Codelab의 div 태그에 출력됨.
+
+
