@@ -108,4 +108,170 @@ App 컴포넌트에 name="velopert"와 자식 요소인 "i am your child"를 전
 이 값들은 App -> Codelab컴포넌트로 전달된다.(name은 Codelab의 h1 태그에 출력, "i am your child"는 
 Codelab의 div 태그에 출력됨.
 
+state
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value:0
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick() {
+    this.setState({
+      value:this.state.value + 1
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+        <h2>{this.state.value}</h2>
+        <button onClick={this.handleClick}>PressMe</button>
+      </div>
+    )
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <Counter/>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App></App>,
+  document.getElementById("root") // 오타 수정 (getElementById)
+);
+
+버튼을 누르면 클릭수를 나타내는 프로그램이다.
+
+근데 여기서
+
+render() {
+    return (
+      <div>
+        <h2>{this.state.value}</h2>
+        <button onClick={this.handleClick}>PressMe</button>
+      </div>
+    )
+  }
+}
+부분에서 {this.handleClick}을 {this.handleClick()}로 ()을 넣으면 문제가 생긴다.
+이유는 class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value:0
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick() {
+    this.setState({
+      value:this.state.value + 1
+    });
+  }
+  
+  render() {
+    return (
+      <div>
+        <h2>{this.state.value}</h2>
+        <button onClick={this.handleClick}>PressMe</button>
+      </div>
+    )
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+      <Counter/>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App></App>,
+  document.getElementById("root") // 오타 수정 (getElementById)
+);
+
+버튼을 누르면 클릭수를 나타내는 프로그램이다.
+
+근데 여기서
+
+render() {
+    return (
+      <div>
+        <h2>{this.state.value}</h2>
+        <button onClick={this.handleClick}>PressMe</button>
+      </div>
+    )
+  }
+}
+부분에서 {this.handleClick}을 {this.handleClick()}로 ()을 넣으면 문제가 생긴다.
+이유는 {this.handleClick}는 클릭할때만 참조하여 {this.handleClick()}을 실행하는 반면,
+{this.handleClick()}로 처음부터 정한다면 실행되고 반환값이 없어서 문제가 생긴다.
+
+
+컴포먼트 맵핑
+
+앵귤러?
+자바스크립트 맵은 배열 내 각 요소를 처리한다.
+
+컨텍트를 만들 때 스테이트를 초기화?
+
+
+class Contactinfo extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.contact.name} - {this.props.contact.phone}
+      </div>
+    );
+  }
+}
+
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contactData: [
+        { name: 'Abet', phone: '010-0000-0001' },
+        { name: 'Betty', phone: '010-0000-0002' },
+        { name: 'Charlie', phone: '010-0000-0003' },
+        { name: 'David', phone: '010-0000-0004' }
+      ]
+    };
+  }
+
+  render() {
+    const mapToComponent = (data) => {
+      return data.map((contact, i) => {
+        return <Contactinfo contact={contact} key={i} />;
+      });
+    };
+
+    return <div>{mapToComponent(this.state.contactData)}</div>;
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (
+     <Contact/>
+    );
+  }
+};
+
+ReactDOM.render(
+<App></App>,
+document.getElementByld("root")
+);
+
+여기까지가 codepen으로 코딩을 한거고 이제는 niturous나 codespace에서 공부하기.
 
