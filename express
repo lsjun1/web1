@@ -2,11 +2,7 @@ express
 https://codepen.io/axzekhmd-the-selector/pen/KKOPXPL
 https://github.com/codespaces/templates
 
-https://www.inflearn.com/course/react-%EA%B0%95%EC%A2%8C-velopert#reviews
-https://www.youtube.com/watch?v=Tt_tKhhhJqY&t=9s 조코딩
-https://www.youtube.com/watch?v=hwknmhLKgYg&list=PLuHgQVnccGMAGOQu8CBDO9hn-FXFmm4Wp 생활코딩
-
-react------------------- 
+프론트엔드 react------------------- 
 
 jsx의 특징
 
@@ -273,5 +269,6 @@ ReactDOM.render(
 document.getElementByld("root")
 );
 
-여기까지가 codepen으로 코딩을 한거고 이제는 niturous나 codespace에서 공부하기.
+node.js---------------------------
+https://www.inflearn.com/course/do-it-nodejs-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%9E%85%EB%AC%B8
 
