@@ -1,3 +1,7 @@
+https://codepen.io/axzekhmd-the-selector/pen/KKOPXPL
+https://github.com/codespaces/templates
+https://github.com/codespaces/templates
+
 백
 react
 
@@ -8,9 +12,8 @@ django/flask
 express
 https://www.inflearn.com/course/lecture?courseSlug=node-js-express&unitId=13878&tab=curriculum
 
-
-https://codepen.io/axzekhmd-the-selector/pen/KKOPXPL
-https://github.com/codespaces/templates
+next.js
+https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%8A%94-%EB%84%A4%EC%8A%A4%ED%8A%B8-%EC%A0%9C%EC%9D%B4%EC%97%90%EC%8A%A4?attributionToken=lQHwlAoMCNeOzroGEMfcx50DEAEaJDY3N2UxYWMwLTAwMDAtMjc2ZC04M2ZiLTNjMjg2ZDQzMjE4ZSoHMTI4NDIwNzI4qOWqLcXL8xejgJcim9a3LcLwnhW2t4wtjr6dFdSynRWQ97IwmNa3LY6RyTCZ3dgwnN3YMJruxjA6DmRlZmF1bHRfc2VhcmNoSAFYAWABaAF6AnNp
 
 프론트엔드 react------------------- 
 
@@ -281,4 +284,17 @@ document.getElementByld("root")
 
 node.js---------------------------
 https://www.inflearn.com/course/do-it-nodejs-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%9E%85%EB%AC%B8
+
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 
