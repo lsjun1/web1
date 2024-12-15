@@ -32,9 +32,9 @@ cat은 객체이면서 Animal의 인스턴스이다.
 
 
 class Animal {
-    String name;
+    String name; //인스턴스 변수
 
-    public void setName(String name) {
+    public void setName(String name) { //매개변수
         this.name = name;
     }
 }
@@ -42,7 +42,7 @@ class Animal {
 public class Sample {
     public static void main(String[] args) {
         Animal cat = new Animal();
-        cat.setName("body"); // 메서드 호출
+        cat.setName("body"); // body는 매개변수
         
         Animal dog = new Animal();
         dog.setName("happy");
@@ -52,6 +52,17 @@ public class Sample {
 this.name = name에 대해 설명해보자. 
 우선 cat.setName("body")에서 입력값으로 setName메서드를 호출했기에 
 setName의 내부에 선언된 this는 cat을 가리킨다.
+
+class Animal {
+    String name;
+에 String name은 클래스의 인스턴스 변수고
+
+setName(String name)
+에 String name은 매개변수 name이다.
+
+그리고 this.name = name에서 this는 현재 객체를 가리키면 this.name = name;구문에서
+좌측의 this.name은 현재 객체의 name 필드를 
+우측의 name은 메서드나 생성자의 매개변수다.
 
 + 
 추가적으로 객체 변수는 공유되지 않는다는 점을 살펴보자.
