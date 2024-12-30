@@ -45,6 +45,10 @@ public과 private로 클래스는 드러내며 클래스 내부 객체 속성값
 자세한 설명은
 https://limkydev.tistory.com/188
 
+52p
+TEMPLATE METHOD패턴
+
+
 61p
 
 상속은 메서드나 인스턴스 변수를 재사용한다기보다는
