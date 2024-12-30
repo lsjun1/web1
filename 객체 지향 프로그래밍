@@ -523,5 +523,10 @@ https://www.tcpschool.com/java/java_inheritance_super
 오버로딩은 새로운 메소드 정의
 오버라이딩은 상속받은 기존 메소드 재정의
 
+
+
+
+절차지향과 객체지향의 관점에서 코딩 분석
+
 this 메소드로 인스턴스 변수에 접근함.
 
