@@ -220,23 +220,24 @@ main 메서드에서 varTest메서드를 호출하면 Sample 클래스의 sample
 
 
 값에 의한 호출---------------
+
 class Updater {
-    void update(Counter counter) { //int count
-        counter.count++; //count++;
+    void update(Counter counter) { // Counter 객체를 매개변수로 받음
+        counter.count++; // Counter 객체의 count 필드를 증가시킴
     }
 }
 
 class Counter {
-    int count = 0;
+    int count = 0; // count 변수 초기화
 }
 
 public class Sample {
     public static void main(String[] args) {
-        Counter myCounter = new Counter();
-        System.out.println("before update:"+myCounter.count);
-        Updater myUpdater = new Updater();
-        myUpdater.update(myCounter);
-        System.out.println("after update:"+myCounter.count);
+        Counter myCounter = new Counter(); // Counter 객체 생성
+        System.out.println("before update:" + myCounter.count); // 0 출력
+        Updater myUpdater = new Updater(); // Updater 객체 생성
+        myUpdater.update(myCounter); // Counter 객체를 전달하여 update 메서드 호출
+        System.out.println("after update:" + myCounter.count); // 1 출력
     }
 }
 
@@ -251,6 +252,16 @@ count(++)로 0을 복사하고 왼쪽 int count에 0을 전달하고 count(++)�
 
 결론: 최종적으로 count++이 0을 복사하여 왼쪽의 int count에 0이 전달되고, 
 오른쪽의 count는 그 이후 0에서 1로 증가된 것이다.
+
+https://chatgpt.com/c/67728359-4484-8001-a36d-17d1bb370392
+
+값에 의한 호출 vs 참조에 의한 호출
+
+
+
+
+
+
 
 상속----------------------------
 class Animal {
