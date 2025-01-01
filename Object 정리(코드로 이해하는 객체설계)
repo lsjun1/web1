@@ -36,14 +36,18 @@ Audience 클래스도 개선을 해야 할 필요는 있다.
 public과 private로 클래스는 드러내며 클래스 내부 객체 속성값을 해당 메서드로만 변경 가능하도록 만든다.
 정보은닉과 무분별함으로 인한 식별 불가능을 막기 위함이다.
 
+캡슐화,추상클래스,TEMPLATE METHOD
+
 51p 추상클래스
 
-추상클래스는 실체클래스의 공통적인 부분을 추출해서 선언한 클래스
-추상클래스는 객체를 생성할 수 없다.
-추상클래스와 실체클래스는 상속관계이다.
-
-자세한 설명은
+추상클래스
 https://limkydev.tistory.com/188
+
+객체지향설계
+https://limkydev.tistory.com/77
+
+TEMPLATE METHOD
+https://refactoring.guru/ko/design-patterns/template-method
 
 52p
 TEMPLATE METHOD패턴
@@ -55,6 +59,7 @@ TEMPLATE METHOD패턴
 부모 클래스가 가지고 있는 모든 인터페이스를 자식 클래스가 물려받는 구조를 가지기에 가치가 있다
 
 자식 클래스가 부모 클래스를 대신하는 것을 업캐스팅이라고 한다.
+
 
 
 
