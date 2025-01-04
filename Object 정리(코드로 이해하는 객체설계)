@@ -49,7 +49,7 @@ https://limkydev.tistory.com/77
 TEMPLATE METHOD
 https://refactoring.guru/ko/design-patterns/template-method
 
-
+super
 
 52p
 TEMPLATE METHOD패턴
@@ -122,6 +122,13 @@ public class Main {
 부모 클래스가 가지고 있는 모든 인터페이스를 자식 클래스가 물려받는 구조를 가지기에 가치가 있다
 
 자식 클래스가 부모 클래스를 대신하는 것을 업캐스팅이라고 한다.
+
+71p
+상속은 안 좋은 영향도 있다.
+
+캡슐화의 위반 존재
+
+설계가 유연하지 않다.
 
 
 
