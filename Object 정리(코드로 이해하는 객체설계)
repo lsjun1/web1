@@ -49,8 +49,71 @@ https://limkydev.tistory.com/77
 TEMPLATE METHOD
 https://refactoring.guru/ko/design-patterns/template-method
 
+
+
 52p
 TEMPLATE METHOD패턴
+
+AbstractClass
+├── templateMethod() (템플릿 메서드: 알고리즘 골격 제공)
+├── concreteMethod() (공통 구현 제공)
+└── abstractMethod() (하위 클래스에서 구현할 추상 메서드)
+
+ConcreteClass
+└── abstractMethod() 구현
+
+---------------------------------------------------------------------------------------------------------------
+
+// 상위 클래스 (추상 클래스)
+abstract class Game {
+    // 템플릿 메서드
+    public final void play() {
+        start();
+        playTurn();
+        end();
+    }
+
+    // 공통 메서드
+    private void start() {
+        System.out.println("게임을 시작합니다.");
+    }
+
+    private void end() {
+        System.out.println("게임이 종료되었습니다.");
+    }
+
+    // 하위 클래스에서 구현할 추상 메서드
+    protected abstract void playTurn();
+}
+
+// 하위 클래스 1
+class Soccer extends Game {
+    @Override
+    protected void playTurn() {
+        System.out.println("축구 경기를 진행합니다.");
+    }
+}
+
+// 하위 클래스 2
+class Chess extends Game {
+    @Override
+    protected void playTurn() {
+        System.out.println("체스 경기를 진행합니다.");
+    }
+}
+
+// 클라이언트 코드
+public class Main {
+    public static void main(String[] args) {
+        Game soccer = new Soccer();
+        soccer.play(); // 축구 게임 진행
+
+        Game chess = new Chess();
+        chess.play(); // 체스 게임 진행
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------
 
 
 61p
@@ -85,6 +148,8 @@ ex) 1.예매하라 -> Screening-> Movie
 2. 그 다음 해당 행동을 해결하기 위해 어떤 객체가 적격인지 생각한다.
 3. 그리고 그 다음 객체가 어떤 행동을 할 때 어떤 객체가 적격인지 생각한다.
 이 행동을 반복하는 것이 객체의 책임을 결정하고 그 객체가 문제를 직접 해결하게하는 자율적 객체를 만든다.
+
+
 
 113p
 캡슐화
