@@ -1,5 +1,7 @@
 https://wikidocs.net/281
+
 https://www.tcpschool.com/java/java_collectionFramework_concept
+
 2003090019682 
 
 https://www.compilejava.net/
@@ -152,7 +154,10 @@ person.setName("Alice"); 호출로 인해 "Alice"가 매개변수 name에 전달
 이후에 이 값이 person 객체의 name 필드에 저장됩니다.
 
 1.setName(String name)이라는 메서드를 만들어서 구조를 획일화, 변수값을 직접 설정을 막음.
+
 2.this.name = name;으로 매개변수값을 변수/필드에 할당함.
+this.name(객체의 필드) = name(매개변수);
+
 3.person.setName("Alice");는 메서드 호출로 setName메서드에 있는 name에 Alice라는 값을 전달함.
 그리고 그 전달값을 변수/필드값에 할당함.
 
@@ -252,8 +257,6 @@ count(++)로 0을 복사하고 왼쪽 int count에 0을 전달하고 count(++)�
 
 결론: 최종적으로 count++이 0을 복사하여 왼쪽의 int count에 0이 전달되고, 
 오른쪽의 count는 그 이후 0에서 1로 증가된 것이다.
-
-https://chatgpt.com/c/67728359-4484-8001-a36d-17d1bb370392
 
 값에 의한 호출 vs 참조에 의한 호출
 
@@ -533,9 +536,6 @@ https://www.tcpschool.com/java/java_inheritance_super
 
 오버로딩은 새로운 메소드 정의
 오버라이딩은 상속받은 기존 메소드 재정의
-
-
-
 
 절차지향과 객체지향의 관점에서 코딩 분석
 
