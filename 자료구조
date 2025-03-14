@@ -12,8 +12,14 @@ malloc(sizeof(Node))는 Node 구조체 크기만큼 메모리를 동적으로 �
 malloc()함수는 기본적으로 모든 타입의 포인터를 반환하기에 필요한 타입으로 casting 변환 해야 함.
 
 무슨 말이냐?면
-(Node *)malloc(sizeof(Node))
-malloc()함수는 void *를 반환하기에 Node * 타입으로 변환해야 함.
+void *malloc(sizeof(Node))
+
+여기서 void *는 모든 타입의 포인터로 변환 가능함을 만들어줌.
+근데 문제는 어떤 타입인지 정확하게 지정해야 올바른 데이터 타입으로 사용가능함.
+
+그래서 Node *ptr = (Node *)malloc(sizeof(Node));
+(Node *)를 이용해서 void *를 Node *로 변환해서 어떤 타입인지 명확하게 지정한거임.
+명확하게 지정함으로써 ptr은 Node 구조체의 포인터가 되어 ->연산자로 Node에 접근 가능함.
 
 tmi : (Node *) 타입은 형 변환한거다.
 
