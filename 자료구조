@@ -1,20 +1,31 @@
-newNode->data = readData:
+typedef struct node와 struct node의 차이점.
 
-newNode가 data을 readData값에 저장시키는것이다.
+typedef를 작성하면 나중에 "node s1로 입력가능함" 즉 요약가능
+typedef 없이 그냥 struct node를 작성 시 "struct node s1로 입력해야 함". 즉 struct을 추가해야 함.
 
-newNode = readData;
-newNode가 readData를 가리키게 만든다.
-즉 포인터의 주소가 변경된다.
+malloc(sizeof(Node))
+에서 malloc(sizeof)는 동적 메모리 할당 함수
+sizeof(Node)는 Node구조체가 차지하는 메모리 크기 계산
 
-단일 연결 리스트 
------------------------------------------------
-head -> NULL
-tail -> NULL
-이 두 개의 그림을 위해서
+malloc(sizeof(Node))는 Node 구조체 크기만큼 메모리를 동적으로 할당하고, 그 메모리의 주소를 반환함.
 
-Node * head = NULL;
-Node * tail = NULL;
-Node * cur  = NULL;
+malloc()함수는 기본적으로 모든 타입의 포인터를 반환하기에 필요한 타입으로 casting 변환 해야 함.
+
+무슨 말이냐?면
+(Node *)malloc(sizeof(Node))
+malloc()함수는 void *를 반환하기에 Node * 타입으로 변환해야 함.
+
+tmi : (Node *) 타입은 형 변환한거다.
+
+즉 malloc(sizeof(Node))가 반환한 void *를 Node *로 변환하여 구조체 포인터에 저장함.
 
 
+Node *head = (Node *)malloc(sizeof(Node));
 
+코드 동작 과정:
+
+sizeof(Node) → Node 구조체의 크기(예: 8바이트) 계산.
+malloc(sizeof(Node)) → Node 크기만큼 메모리 할당, 메모리 주소 반환 (void * 타입).
+(Node *)malloc(sizeof(Node)) → 반환된 주소를 Node * 타입으로 변환.
+head에 할당된 메모리 주소 저장.
+→ 즉, head가 새로 할당된 Node 구조체의 시작 주소를 가리킴.
