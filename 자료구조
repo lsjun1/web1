@@ -21,7 +21,7 @@ void *malloc(sizeof(Node))
 (Node *)를 이용해서 void *를 Node *로 변환해서 어떤 타입인지 명확하게 지정한거임.
 명확하게 지정함으로써 ptr은 Node 구조체의 포인터가 되어 ->연산자로 Node에 접근 가능함.
 
-tmi : (Node *) 타입은 형 변환한거다.
+void * -> Node *로 변환하는 과정이 (casting)형 변환이다.
 
 즉 malloc(sizeof(Node))가 반환한 void *를 Node *로 변환하여 구조체 포인터에 저장함.
 
