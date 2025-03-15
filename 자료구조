@@ -59,16 +59,24 @@ realloc은 기존 메모리 크기를 조절할 때 사용하며 기존 데이�
 
 이렇게 구조체에서 typedef의 차이점과 동적 메모리할당과 정적 메모리할당에 대해 알아왔다.
 ----------------------------------------------------------------------------------------------
+자, 이제 시작이다.
+배열과 연결리스트를 통한 스택,큐,덱을 전부 익히고
+
+더 나아가서 이중순회를 통한 트리와 
+
 배열과 연결리스트를 통한 자료구조를 이해해보자.
 
-배열: https://travelerfootprint.tistory.com/227
-https://eunjinii.tistory.com/56
-https://minimin2.tistory.com/3
-https://programmerjoon.tistory.com/18
-https://ddmanager2018.com/stack-with-c/
-https://wjj0207.tistory.com/17
-https://taco99.tistory.com/8
-https://devyul.tistory.com/33
+배열을 통한 스택
+https://velog.io/@kimmainsain/C%EC%96%B8%EC%96%B4-%EB%B0%B1%EC%A4%80-10828-%EC%8A%A4%ED%83%9D
+https://t-okk.tistory.com/109
+https://henrynoh.tistory.com/12
+https://zero0205.tistory.com/599
+https://sedangdang.tistory.com/25
+
+배열을 통한 큐 & 프린터/회전 큐
+
+배열을 통한 덱
 
 연결리스트의 종류: 단일 연결리스트, 이중 연결리스트, 원형 연결리스트
+
 
