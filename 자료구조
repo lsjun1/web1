@@ -153,6 +153,7 @@ int top(StackType* s)
 {}
 
 제로 10773
+
 배열 스택https://velog.io/@maemii/C-Python-%EB%B0%B1%EC%A4%80-10773%EB%B2%88-%EC%A0%9C%EB%A1%9C
 스택 https://no-more-assignment.tistory.com/98
 
