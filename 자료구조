@@ -59,12 +59,8 @@ realloc은 기존 메모리 크기를 조절할 때 사용하며 기존 데이�
 
 이렇게 구조체에서 typedef의 차이점과 동적 메모리할당과 정적 메모리할당에 대해 알아왔다.
 ----------------------------------------------------------------------------------------------
-자, 이제 시작이다.
 배열과 연결리스트를 통한 스택,큐,덱을 전부 익히고
-더 나아가서 이중순회를 통한 트리를 이해해보자.
-
-우선 스택,큐,덱을 손코딩 가능해야함.
-이론은 당근 구술로 가능해야하고.
+더 나아가서 순회를 통한 트리를 이해해보자.
 
 백준 자료구조 문제 모음집
 https://velog.io/@kjmq1234/%EB%B0%B1%EC%A4%80-%EB%8B%A8%EA%B3%84%EB%B3%84%EB%A1%9C-%ED%92%80%EA%B8%B0-%EC%8A%A4%ED%83%9D-C%EC%96%B8%EC%96%B4-%ED%92%80%EC%9D%B428278-10773-9012-4949-12789
@@ -167,6 +163,11 @@ https://kyr-db.tistory.com/119
 https://sirius7.tistory.com/27
 https://wtg-study.tistory.com/16
 https://sedangdang.tistory.com/21
+
+좋은 단어 3986번
+https://raccoons-paw.tistory.com/97
+https://tthinks.tistory.com/entry/%EB%B0%B1%EC%A4%80BOJ-3986%EB%B2%88-%EC%A2%8B%EC%9D%80-%EB%8B%A8%EC%96%B4-C%EC%96%B8%EC%96%B4
+https://khj0426.tistory.com/12
 
 도키도키 간식드리미 12789
 https://k-jirung.tistory.com/6
