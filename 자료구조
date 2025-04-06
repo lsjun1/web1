@@ -181,111 +181,22 @@ https://velog.io/@xowls000/C-%EB%B0%B1%EC%A4%80-12789%EB%B2%88 연결리스트 �
 ----------------------------------------------------------------------------------------------------------------
 카드2 2164 
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-#define SIZE 10003
-
-typedef struct
-{
-    int data[SIZE];
-    int front, rear;
-}QueueType;
-
-void init(QueueType * q)
-{
-    q->front = q->rear = 0;
-}
-
-void push(QueueType *q, int e)
-{
-    if(full(q))
-    {
-        printf("queue is full");
-    }
-
-    else
-    {
-        q->rear = (q->rear + 1) % SIZE;
-        q->data[q->rear] = e;
-    }
-}
-
-int pop(QueueType *q)
-{
-    if(empty(q))
-    {
-        return -1;
-    }
-
-    q->front = (q->front + 1) % SIZE;
-    return q->data[q->front];
-}
-
-int size(QueueType *q)
-{
-    return (q->rear - q->front + SIZE) % SIZE;
-}
-
-int empty(QueueType *q)
-{
-    return (q->front == q->rear);
-}
-
-int front(QueueType *q)
-{
-    return q->data[q->front + 1];
-}
-
-int rear(QueueType *q)
-{
-    return q->data[q->rear];
-}
-
-int full(QueueType *q)
-{
-    return q->front == (q->rear + 1) % SIZE;
-}
-
-int main()
-{
-    int n;
-    scanf("%d",&n);
-
-    int arr[102];
-    
-    for(int i = 0; i < n; i++)
-    {
-        if(arr[i] == front)
-        {
-            arr[] = arr[i]; 
-            //arr[i]의 값을 arr[i]의 맨 마지막 배열값이어야 함.
-
-            
-            pop();
-        }
-    }
-}
-
-//맨 앞에 옮겨서 맨 뒤로 옮기고 그 다음 삭제하고...
-
-
-
-
-
-
-
-
-
-
+https://sedangdang.tistory.com/20
+https://hwangjiwon1.tistory.com/2
 
 큐2 18258 
 
-연결리스트 큐 10845번
+큐 10845번
 
 https://khj0426.tistory.com/6 
-https://all4null.tistory.com/46
+https://all4null.tistory.com/46 원형큐
+
+https://velog.io/@shinhs9902/%EB%B0%B1%EC%A4%80-10845%EB%B2%88
+https://m.blog.naver.com/kodewithamy/221774355689
+https://mu7a7ion.tistory.com/26 
+https://chaarlie.tistory.com/46
+
+realloc은 기존 메모리 할당 calloc은 새로운 메모리 할당 및 0으로 초기화함.
 
 #include <stdio.h>
 #include <string.h>
@@ -322,17 +233,6 @@ https://yeomjimi.tistory.com/30
 https://h202.tistory.com/293
 https://codename-bobo.tistory.com/entry/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EB%B0%B1%EC%A4%80-1021%EB%B2%88-C%EC%96%B8%EC%96%B4-%EC%88%9C%ED%99%98%ED%81%90-%EB%8D%B1-%EA%B5%AC%ED%98%84
 https://yjs2673.tistory.com/22
-
-
-배열 큐 10845번 
-
-https://velog.io/@shinhs9902/%EB%B0%B1%EC%A4%80-10845%EB%B2%88
-https://all4null.tistory.com/46  원형큐
-https://m.blog.naver.com/kodewithamy/221774355689
-https://mu7a7ion.tistory.com/26 
-https://chaarlie.tistory.com/46
-
-realloc은 기존 메모리 할당 calloc은 새로운 메모리 할당 및 0으로 초기화함.
 
 프린터 큐 1966 
 
