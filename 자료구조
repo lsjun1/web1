@@ -181,6 +181,105 @@ https://velog.io/@xowls000/C-%EB%B0%B1%EC%A4%80-12789%EB%B2%88 연결리스트 �
 ----------------------------------------------------------------------------------------------------------------
 카드2 2164 
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define SIZE 10003
+
+typedef struct
+{
+    int data[SIZE];
+    int front, rear;
+}QueueType;
+
+void init(QueueType * q)
+{
+    q->front = q->rear = 0;
+}
+
+void push(QueueType *q, int e)
+{
+    if(full(q))
+    {
+        printf("queue is full");
+    }
+
+    else
+    {
+        q->rear = (q->rear + 1) % SIZE;
+        q->data[q->rear] = e;
+    }
+}
+
+int pop(QueueType *q)
+{
+    if(empty(q))
+    {
+        return -1;
+    }
+
+    q->front = (q->front + 1) % SIZE;
+    return q->data[q->front];
+}
+
+int size(QueueType *q)
+{
+    return (q->rear - q->front + SIZE) % SIZE;
+}
+
+int empty(QueueType *q)
+{
+    return (q->front == q->rear);
+}
+
+int front(QueueType *q)
+{
+    return q->data[q->front + 1];
+}
+
+int rear(QueueType *q)
+{
+    return q->data[q->rear];
+}
+
+int full(QueueType *q)
+{
+    return q->front == (q->rear + 1) % SIZE;
+}
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+
+    int arr[102];
+    
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] == front)
+        {
+            arr[] = arr[i]; 
+            //arr[i]의 값을 arr[i]의 맨 마지막 배열값이어야 함.
+
+            
+            pop();
+        }
+    }
+}
+
+//맨 앞에 옮겨서 맨 뒤로 옮기고 그 다음 삭제하고...
+
+
+
+
+
+
+
+
+
+
+
 큐2 18258 
 
 연결리스트 큐 10845번
