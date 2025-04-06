@@ -183,6 +183,34 @@ https://velog.io/@xowls000/C-%EB%B0%B1%EC%A4%80-12789%EB%B2%88 연결리스트 �
 https://khj0426.tistory.com/6 
 https://all4null.tistory.com/46
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define SIZE 10003
+
+typedef struct
+{
+    int data[SIZE];
+    int front, rear;
+}QueueType;
+
+void init(QueueType * q)
+{}
+int empty(QueueType *q)
+{}
+int full(QueueType *q)
+{}
+void push(QueueType *q, int e)
+{}
+int pop(QueueType *q)
+{}
+int front(QueueType *q)
+{}
+int rear(QueueType *q)
+{}
+int size(QueueType *q)
+{}
 요세푸스 11866
 https://sedangdang.tistory.com/28
 https://eungulife.tistory.com/266
