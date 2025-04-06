@@ -149,10 +149,12 @@ int top(StackType* s)
 {}
 
 제로 10773 https://www.acmicpc.net/problem/10773
+
 https://wtg-study.tistory.com/19
 스택 없이 사용https://velog.io/@maemii/C-Python-%EB%B0%B1%EC%A4%80-10773%EB%B2%88-%EC%A0%9C%EB%A1%9C
 
 균형잡힌 세상 4949
+
 https://jh4995.tistory.com/237
 https://dev-with-precious-dreams.tistory.com/25
 
@@ -162,11 +164,13 @@ https://wtg-study.tistory.com/16
 https://sedangdang.tistory.com/21
 
 좋은 단어 3986번
+
 https://raccoons-paw.tistory.com/97
 https://tthinks.tistory.com/entry/%EB%B0%B1%EC%A4%80BOJ-3986%EB%B2%88-%EC%A2%8B%EC%9D%80-%EB%8B%A8%EC%96%B4-C%EC%96%B8%EC%96%B4
 https://khj0426.tistory.com/12
 
 도키도키 간식드리미 12789
+
 https://k-jirung.tistory.com/6
 https://sujin-dev.tistory.com/483
 
@@ -180,6 +184,7 @@ https://velog.io/@xowls000/C-%EB%B0%B1%EC%A4%80-12789%EB%B2%88 연결리스트 �
 큐2 18258 
 
 연결리스트 큐 10845번
+
 https://khj0426.tistory.com/6 
 https://all4null.tistory.com/46
 
@@ -195,29 +200,23 @@ typedef struct
     int front, rear;
 }QueueType;
 
-void init(QueueType * q)
-{}
-int empty(QueueType *q)
-{}
-int full(QueueType *q)
-{}
-void push(QueueType *q, int e)
-{}
-int pop(QueueType *q)
-{}
-int front(QueueType *q)
-{}
-int rear(QueueType *q)
-{}
-int size(QueueType *q)
-{}
+void init(QueueType *Q)
+void push(QueueType *Q, int e)
+int pop(QueueType *Q)
+int size(QueueType *Q)
+int empty(QueueType *Q)
+int front(QueueType *Q)
+int back(QueueType *Q)
+
 요세푸스 11866
+
 https://sedangdang.tistory.com/28
 https://eungulife.tistory.com/266
 https://velog.io/@jxnmxk_02/C-%EB%B0%B1%EC%A4%80-11866%EB%B2%88-%EC%9A%94%EC%84%B8%ED%91%B8%EC%8A%A4-%EB%AC%B8%EC%A0%9C-0
 https://daily-life-in-20s.tistory.com/82
 
 회전 큐 1021번 
+
 https://chinensis.tistory.com/entry/%EB%B0%B1%EC%A4%80BOJ1021%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-C-%ED%92%80%EC%9D%B4
 https://hevton.tistory.com/403
 https://yeomjimi.tistory.com/30
@@ -227,6 +226,7 @@ https://yjs2673.tistory.com/22
 
 
 배열 큐 10845번 
+
 https://velog.io/@shinhs9902/%EB%B0%B1%EC%A4%80-10845%EB%B2%88
 https://all4null.tistory.com/46  원형큐
 https://m.blog.naver.com/kodewithamy/221774355689
