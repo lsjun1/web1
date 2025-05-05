@@ -16,7 +16,7 @@ https://www.compilejava.net/
   
 관람객이 스스로 가방 안 현금과 초대장을 처리하고 판매원이 스스로 매표소의 티켓과 판매 요금을 처리해야한다.
 (Audience와 TicketSeller가 Bag과 TicketOffice를 처리해야한다.)
-  
+
 Theater enter메서드 & public class ticketSeller 코드에서 청중이 입장시 처리하는 코드 부분을 sellTo 메서드에 옮기면 된다.
 
 그러면 TicketSeller 클래스에서 TicketOffice로 ticketOffice
