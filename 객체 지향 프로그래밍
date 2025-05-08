@@ -10,9 +10,56 @@ https://limesparkling.tistory.com/17
 공부방법: 객제지향 완벽 이해 -> object string,stringbuffer 공부(자바 API 클래스) TCP에 있음.
         ->컬렉션 프레임 웍 완벽 이해 -> 입출력 공부 ->(선택)안드로이드 공부 할거면 AWT/Thread 공부
 
+참조 자료형 변수
+Person person;를 참조 자료형 변수라고 한다.
+int num;은 기본 자료형 변수라고 한다.
 
-현재 공부 상황: 클래스,객체,필드,메서드,this 등을 공부함,
-+인터페이스 랑 다형성 익히고 있음.
+인스턴스란 new로 만들어진 객체다.
+
+------------------------------------
+멤버 변수,인스턴스 변수,정적 변수
+
+멤버 변수란?
+클래스 내에서 선언된 변수며,
+멤버 변수에는 인스턴스 변수, 정적 변수로 나뉜다.
+
+------------------------------------
+ex)
+멤버 변수
+
+class Person {
+    String name; // 인스턴스 변수
+    int age; // 인스턴스 변수
+    String sex; // 인스턴스 변수
+    static string nationality = “korea”; // 정적 변수
+}
+------------------------------------
+인스턴스 변수
+
+생성 후에 접근 가능한 변수며 
+인스턴스가 소멸하면 인스턴스 변수도 소멸된다.
+
+Person person1 = new Person();
+person1.name = "록카";
+person1.sex = "female";
+
+------------------------------------
+정적변수(클래스 변수)
+
+인스턴스를 생성하지 않아도 접근 가능한 변수
+
+String nation = Person.nationality;
+
+------------------------------------
+객체의 합성
+
+class Car {
+    Engine engine;  // Car 객체는 Engine 객체를 포함
+
+    // 생성자에서 Car 객체에 Engine 객체를 포함시킴
+    Car() {
+        this.engine = new Engine();
+    }
 
 클래스------------------------------------
 
@@ -344,6 +391,10 @@ Animal 클래스가 부모 Dog 클래스가 자식 클래스다.
 
 생성자---------------------------------------------------------------------------------------------------------------
 
+생성자
+객체의 초기값을 위해 만들어진 틀
+ex) Person(String name, int age)
+
 생성자 오버로딩 : 생성자를 다른 데이터 타입, 다른 입력값 등으로 여러개의 생성자를 만드는 것
 
 class Animal {
@@ -541,3 +592,27 @@ https://www.tcpschool.com/java/java_inheritance_super
 
 this 메소드로 인스턴스 변수에 접근함.
 
+-------------------------------------------------
+부모 생성자 호출
+
+부모 클래스에 생성자가 선언된 경우 super()를 통해 
+부모의 생성자 중 하나를 반드시 호출해야한다.
+
+ex)
+public class ParentDog {
+    String name;
+
+    ParentDog(String name) {
+        this.name = name;
+    }
+
+    ParentDog(String name1, String name2) {
+
+    }
+}
+
+public class ChildDog extends ParentDog {
+    ChildDog(String name) {
+        super(name); // 부모 클래스의 ParentDog(String name)생성자 호출
+    }
+}
