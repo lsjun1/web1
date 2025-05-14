@@ -616,3 +616,31 @@ public class ChildDog extends ParentDog {
         super(name); // 부모 클래스의 ParentDog(String name)생성자 호출
     }
 }
+
+----------------------
+익명 클래스
+코드 내부에 이름이 존재하지 않는 클래스를 만드는 것
+
+ex)
+
+  Coffee coffee = new Coffee() {
+            // make 메서드 오버라이드
+            public void make() {
+                System.out.println("Override Make!!");
+            }
+            // 새로운 메서드
+            public void serve() {
+                System.out.println("Serve");
+            }
+        }
+}
+에서 new Coffee() { ... } 전부 익명 클래스며
+public void make()/serve()가 메서드 오버라이딩이다.
+
+쉽게 말해서 클래스 객체 = new 클래스() 이 부분은
+인스턴스 생성이자 익명 클래스 생성 구절이다.
+
+익명 클래스를 쓰는 이유는 가독성과 흐름때문이고,
+익명 클래스의 진정한 진가는 인터페이스에서 나타나는데,
+
+
