@@ -618,6 +618,28 @@ public class ChildDog extends ParentDog {
 }
 
 ----------------------
+
+추상화 클래스 상속 시 
+
+public class Retriever extends Dog {
+    public Retriever(String name) {
+        super(name);  // 추상 클래스 생성자 호출
+    }
+super(인스턴스 변수)를 꼭 작성하고
+
+인터페이스 구현 시
+
+public class Retriever implements Dog {
+    private String name;
+
+    public Retriever(String name) {
+        this.name = name;
+    }
+
+로 생성자를 꼭 작성해야 한다.
+
+----------------------
+
 익명 클래스
 코드 내부에 이름이 존재하지 않는 클래스를 만드는 것
 
@@ -642,5 +664,6 @@ public void make()/serve()가 메서드 오버라이딩이다.
 
 익명 클래스를 쓰는 이유는 가독성과 흐름때문이고,
 익명 클래스의 진정한 진가는 인터페이스에서 나타나는데,
+
 
 
