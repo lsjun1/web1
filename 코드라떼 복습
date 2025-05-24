@@ -1,0 +1,141 @@
+참조 자료형과 인스턴스
+
+Person person = new Person();
+
+Person은 참조 자료형
+person은 참조 자료형 변수
+new Person()은 인스턴스 
+-------
+생성자
+
+생성자가 있어야 인스턴스를 만들 수 있다.
+
+class Person {
+    String name;
+    int age;
+    String sex;
+
+    //생성자와 매개변수(왼쪽 this.name이 멤버 변수 오른쪽 = name이 매개변수다) 
+    Person(String name, int age, String sex) { 
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+}
+-----
+멤버 변수/인스턴스 변수/정적 변수
+
+멤버 변수 안에 인스턴스 변수와 정적 변수가 나눠지고
+
+인스턴스 변수: 생성 후 접근 가능한 변수
+ex) 
+Person person1 = new Person();
+person1.name = “록카”; // 인스턴스 변수
+
+정적 변수:생성하지 않아도 접근 가능한 변수
+ex)
+String nation = Person.nationality; // 정적 변수
+---
+생성자 오버로딩
+
+    Person(String name) { 
+        this.name = name;
+    }
+
+    Person(int age) {
+        this.age = age;
+    }
+...
+이렇게 생성자를 여러 개 만드는 것이 생성자 오버로딩이다.
+
+this() : 자기 자신의 생성자를 호출하는 방식으로 생성자 내부에서만 사용 가능하다.
+
+생성자 오버로딩 호출과정
+
+class Person {
+    String name;
+    int age;
+    String gender;
+
+    Person(String name) {
+        this.name = name;
+    }
+
+    Person(String name, int age) {
+        this(name);          // (2단계로 연결됨)
+        this.age = age;
+    }
+
+    Person(String name, int age, String gender) {
+        this(name, age);     // (1단계)
+        this.gender = gender;
+    }
+}
+
+| 단계 | 설명                                    |
+| -- | ------------------------------------- |
+| 0  | `new Person("김철수", 15, "male")` 호출 시작 |
+| 1  | `this(name, age)` → 2번째 생성자 호출        |
+| 2  | `this(name)` → 1번째 생성자 호출             |
+| 3  | `this.name = name;` 실행됨               |
+| 4  | 돌아가서 `this.age = age;` 실행됨            |
+| 5  | 다시 돌아가서 `this.gender = gender;` 실행됨   |
+
+그냥 간단하게 생각해보자면, 
+피라미드 밑바닥부터 호출해서,
+피라미드 윗부분이 마지막으로 호출된다면,
+그 다음부터 윗부분부터 실행되는 구조라고 생각하면 됨.
+----------------------------------------------------
+인스턴스 메서드와 정적 메서드
+
+인스턴스 메서드 : 내가 아는 메서드
+
+정적 메서드 : 정적 메서드 내부에서 인스턴스 변수에 접근 가능하다는 특징이 있음.
+ex) 
+
+class Utils {
+    // 정적 변수
+    static int c = 3; //접근 가능함.
+ 
+    static int plus(int a, int b) {
+        return a + b + c;
+    }
+}
+------------------------------------
+메서드 오버로딩
+
+메서드 여러개 만드는 거
+------------------------------------
+캡슐화 
+암기 필요함.
+------------------------------------
+문자열 자르기
+실전 능력 필요함.
+------------------------------------
+상속
+
+extend로 상속을 하며, 클래스의 변수와 메서드를 공유받음.
+
+public class ParentDog {
+    protected String color = "black";
+    static protected int age = 10;
+
+    protected void bark() {
+        System.out.println("왈왈!");
+    }
+}
+
+public class ChildDog extends ParentDog {
+    // color, age 변수와
+    // bark(); 메서드의 요소를 상속 받는다
+}
+public class Main {
+
+    public static void main(String[] args) {
+        // ChildDog 클래스에 변수나 메서드를 선언하지 않아도 접근할 수 있습니다.
+        ChildDog childDog = new ChildDog();
+        System.out.println(childDog.color);
+        childDog.bark();
+    }
+
+}
