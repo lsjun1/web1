@@ -139,3 +139,21 @@ public class Main {
     }
 
 }
+----------
+super() 메서드를 이용한 부모 생성자 호출
+
+public class ParentDog {
+    String name;
+
+    ParentDog(String name) {
+        this.name = name;
+    }
+}
+public class ChildDog extends ParentDog {
+    ChildDog(String name) {
+        super(name); // 부모 ParentDog 클래스의 생성자 호출
+    }
+}
+
+부모 생성자가 선언되어 있는 경우(ParentDog) 
+자식 클래스에서 부모의 생성자 중 하나를 반드시 호출해야함.
