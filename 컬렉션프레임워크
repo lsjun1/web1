@@ -1,33 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
+단일연결리스트
 
-public class ArrayListPractice {
-    public static void main(String[] args) {
-        List<String> fruit = new ArrayList<String>();
-
-        fruit.add("apple");
-        fruit.add("banana");
-        fruit.add("melon");
-
-        int size = fruit.size();
-
-        for(int i = 0; i < size; i++) {
-            String str = fruit.get(i);
-            System.out.println(i + " : " + str);
-        }
-
-        fruit.remove(0);
-
-        System.out.println("\nAfter removal:");
-        for(int i = 0; i < fruit.size(); i++) {
-            String str = fruit.get(i);
-            System.out.println(i + " : " + str);
-        }
-    }
+class Node {
+    Node next;
+    Object data;
 }
-
-----------------------------------------
-fruit는 ArrayList 객체.
-size()는 그 객체의 메서드로, 요소의 개수를 반환.
-int size는 그 반환값을 저장하는 변수.
-------------------------------------------------------
