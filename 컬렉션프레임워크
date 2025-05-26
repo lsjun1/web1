@@ -1,6 +1,1 @@
-단일연결리스트
 
-class Node {
-    Node next;
-    Object data;
-}
