@@ -1,1 +1,65 @@
+단일 연결 리스트 속성
 
+class SinglyLinkedList {
+  Node head = null;  // 연결 리스트의 첫 번째 노드를 가리킴 (처음엔 비어 있음)
+  int size = 0;      // 현재 노드의 개수
+}
+
+특정 index의 Node 찾기
+
+Node findNode(int searchIndex) {
+  // 유효하지 않은 인덱스인 경우 예외 처리
+  if (searchIndex < 0 || searchIndex >= size) {
+    throw new ArrayIndexOutOfBoundsException();
+  }
+
+  int nodeIndex = 0;          // 0번부터 시작
+  Node pointer = head;        // head부터 하나씩 따라가며 찾기 시작
+
+  // 찾고자 하는 인덱스에 도달할 때까지 다음 노드로 이동
+  while (nodeIndex != searchIndex) {
+    pointer = pointer.next;   // 다음 노드로 이동
+    nodeIndex++;              // 현재 인덱스도 함께 증가
+  }
+
+  return pointer;             // 원하는 위치의 노드를 반환
+}
+
+특정 index에 Node 삽입
+
+public void add(int index, Object data) {
+  Node newNode = new Node();  // 새 노드 생성
+  newNode.data = data;        // 새로운 데이터 설정
+
+  if (index == 0) {
+    // 맨 앞에 삽입하는 경우:
+    newNode.next = head;  // 새 노드가 기존 첫 노드를 가리키게 하고
+    head = newNode;       // head를 새 노드로 바꿈 (리스트 시작점 변경)
+  } else {
+    // 중간이나 끝에 삽입하는 경우:
+    Node prevNode = findNode(index - 1);  // 이전 노드를 찾아서
+    newNode.next = prevNode.next;         // 새 노드가 그 다음 노드를 가리키게 하고
+    prevNode.next = newNode;              // 이전 노드가 새 노드를 가리키도록 설정
+  }
+
+  size++;  // 노드 개수 1 증가
+}
+
+특정 index의 Node 삭제
+
+public void remove(int index) {
+  if (index < 0 || index >= size) {
+    throw new IndexOutOfBoundsException();
+  }
+
+  if (index == 0) {
+    // 맨 앞 노드를 삭제하는 경우:
+    head = head.next;  // head를 다음 노드로 옮김
+  } else {
+    // 중간이나 끝 노드를 삭제하는 경우:
+    Node prevNode = findNode(index - 1);         // 삭제할 노드의 이전 노드를 찾고
+    prevNode.next = prevNode.next.next;          // 현재 노드를 연결에서 제거
+  }
+
+  size--;  // 노드 개수 1 감소
+}
