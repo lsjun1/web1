@@ -63,3 +63,6 @@ public void remove(int index) {
 
   size--;  // 노드 개수 1 감소
 }
+
+스택
+
